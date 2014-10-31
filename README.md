@@ -64,6 +64,7 @@ config/environments/*.rb
 ## Default User
 
 Username: admin
+
 Password: password
 
 ## License
