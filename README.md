@@ -14,7 +14,7 @@ $ npm install -g cucumber
 
 ```
 
-### 2. Runy bundle and bower task
+### 2. Ruby bundle and bower task
 
 ```
 $ bundle install
@@ -38,8 +38,8 @@ config/environments/*.rb
 ```
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise*delivery_errors = true
-  config.action_mailer.smtp*settings = {
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
     address:              'smtp.example.com',
     port:                 587,
     domain:               '@example.com',
@@ -55,7 +55,7 @@ config/environments/*.rb
   # Defaults to:
   # config.action_mailer.sendmail_settings = {
   #   location: '/usr/sbin/sendmail',
-  #   arguments: '*i *t'
+  #   arguments: '-i -t'
   # }
   #config.action_mailer.perform_deliveries = true
   #config.action_mailer.raise_delivery_errors = true
@@ -97,7 +97,7 @@ Password: password
 * Logging and Exception handling
 * Documentation
 * Searchmask redesign with AND/OR syntax
-* Redesign Mail*content
+* Redesign Mail-content
 * Format Date output
 * HAML formatting
 
