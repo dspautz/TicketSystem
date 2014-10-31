@@ -6,33 +6,38 @@ Example application to create Issue report tickets for customers and to manage t
 
 ### 1. Install Node and dependencies
 
------------
-sudo apt-get install nodejs
-sudo apt-get install npm
+```
+$ sudo apt-get install nodejs
 
-npm install bower
-----
+$ sudo apt-get install npm
+
+$ npm install -g bower
+
+$ npm install -g cucumber
+
+```
 
 ### 2. Runy bundle and bower task
 
------------
-bundle install
-rake bower:install
-----
+```
+$ bundle install
+$ rake bower:install
+```
 
 ### 3. Instantiate Database
------------
-rake db:create
-rake db:migrate
-rake db:seed
-----
+```
+$ rake db:create
+$ rake db:migrate
+
+$ rake db:seed
+```
 
 
 ### 4. Configure Mailer
 
------------
+```
 config/environments/*.rb
-----
+```
 
 ```
   config.action_mailer.delivery_method = :smtp
