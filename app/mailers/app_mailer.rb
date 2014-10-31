@@ -1,10 +1,6 @@
 class AppMailer < ActionMailer::Base 
-  require 'socket'
-
   include AbstractController::Callbacks
-    
-  default from: "d.spautz@web.de"
-  
+      
   def confirmation_email ticket
     @ticket=ticket
     base_url = root_url(only_path: true)
