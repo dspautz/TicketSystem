@@ -80,15 +80,16 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    address:              'smtp.web.de',
+    address:              'smtp.example.com',
     port:                 587,
-    domain:               'domain.com',
+    domain:               '@example.com',
     user_name:            'example@domain.com',
     password:             '****',
     authentication:       'plain',
     enable_starttls_auto: true,
     return_response: true
   }
+  config.action_mailer.default_options = {from: 'example@domain.com'}
   
   #config.action_mailer.delivery_method = :sendmail
   # Defaults to:
@@ -98,5 +99,4 @@ Rails.application.configure do
   # }
   #config.action_mailer.perform_deliveries = true
   #config.action_mailer.raise_delivery_errors = true
-  #config.action_mailer.default_options = {from: 'd.spautz@mail.de'}
 end
