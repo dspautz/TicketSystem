@@ -7,10 +7,10 @@ Example application to create Issue report tickets for customers and to manage t
 ### 1. Install Node and dependencies
 
 ```
-$ sudo apt*get install nodejs
-$ sudo apt*get install npm
-$ npm install *g bower
-$ npm install *g cucumber
+$ sudo apt-get install nodejs
+$ sudo apt-get install npm
+$ npm install -g bower
+$ npm install -g cucumber
 
 ```
 
@@ -36,29 +36,29 @@ config/environments/*.rb
 ```
 
 ```
-  config.action*mailer.delivery*method = :smtp
-  config.action*mailer.perform*deliveries = true
-  config.action*mailer.raise*delivery*errors = true
-  config.action*mailer.smtp*settings = {
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise*delivery_errors = true
+  config.action_mailer.smtp*settings = {
     address:              'smtp.example.com',
     port:                 587,
     domain:               '@example.com',
-    user*name:            'example@domain.com',
+    user_name:            'example@domain.com',
     password:             '****',
     authentication:       'plain',
-    enable*starttls*auto: true,
-    return*response: true
+    enable_starttls_auto: true,
+    return_response: true
   }
-  config.action*mailer.default*options = {from: 'example@domain.com'}
+  config.action_mailer.default_options = {from: 'example@domain.com'}
   
-  #config.action*mailer.delivery*method = :sendmail
+  #config.action_mailer.delivery_method = :sendmail
   # Defaults to:
-  # config.action*mailer.sendmail*settings = {
+  # config.action_mailer.sendmail_settings = {
   #   location: '/usr/sbin/sendmail',
   #   arguments: '*i *t'
   # }
-  #config.action*mailer.perform*deliveries = true
-  #config.action*mailer.raise*delivery*errors = true
+  #config.action_mailer.perform_deliveries = true
+  #config.action_mailer.raise_delivery_errors = true
 ```
 
 ## Most important used technology
