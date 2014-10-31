@@ -11,32 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031121310) do
-
-  create_table "requests", force: true do |t|
-    t.text     "report"
-    t.integer  "ticket_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tickets", force: true do |t|
-    t.string   "status"
-    t.string   "subject"
-    t.integer  "user_id"
-    t.string   "customer_name"
-    t.string   "customer_email"
-    t.string   "customer_department"
-    t.string   "reference_no"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: true do |t|
-    t.string   "username"
-    t.string   "password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

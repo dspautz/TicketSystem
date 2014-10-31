@@ -4,7 +4,8 @@ class Ticket < ActiveRecord::Base
   before_create :generate_reference_no, :set_status
   after_create :send_confirmation_email
 
-  enum status: [ "Waiting for Staff Response", "Waiting for Customer", "On Hold", "Cancelled", "Complete" ]
+  #enum status: [ "Waiting for Staff Response", "Waiting for Customer", "On Hold", "Cancelled", "Complete" ]
+  
   def generate_reference_no
     chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ0123456789'
     ref_no = ''

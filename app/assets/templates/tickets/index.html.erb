@@ -6,7 +6,7 @@
 		<div ng-controller="TicketTabsCtrl">
 
 			<tabset justified="true">
-				<tab heading="New unassigned tickets">
+				<tab heading="New/Unassigned">
 					<div class="row-fluid">
 
 						<section >
@@ -37,11 +37,11 @@
 											<span class="glyphicon glyphicon-edit"></span>Edit
 										</button></td>
 										<td>{{ticket.referenceNo}}</td>
-										<td><select class="form-control" ng-model="ticket.user" ng-options="user.username for user in users"></select></td>
+										<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users"></select></td>
 										<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
 										<td>{{ticket.customerDepartment}}</td>
 										<td>{{ticket.subject}}</td>
-										<td><select class="form-control" ng-model="ticket.status" ng-options="status for (status,id) in statuses"></td>
+										<td><select class="form-control" ng-model="ticket.status" ng-options="status for status in statuses"></td>
 									</tr>
 								</tbody>
 							</table>
@@ -49,7 +49,7 @@
 						</section>
 					</div>
 				</tab>
-				<tab heading="Open tickets">
+				<tab heading="Open">
 					<div class="row-fluid">
 
 						<section >
@@ -80,11 +80,11 @@
 											<span class="glyphicon glyphicon-edit"></span>Edit
 										</button></td>
 										<td>{{ticket.referenceNo}}</td>
-										<td><select class="form-control" ng-model="ticket.user" ng-options="user.username for user in users"></select></td>
+										<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users"></select></td>
 										<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
 										<td>{{ticket.customerDepartment}}</td>
 										<td>{{ticket.subject}}</td>
-										<td><select class="form-control" ng-model="ticket.status" ng-options="status for (status,id) in statuses"></td>
+										<td><select class="form-control" ng-model="ticket.status" ng-options="status for status in statuses"></td>
 									</tr>
 								</tbody>
 							</table>
@@ -92,7 +92,7 @@
 						</section>
 					</div>
 				</tab>
-				<tab heading="On hold tickets">
+				<tab heading="On Hold">
 					<div class="row-fluid">
 
 						<section >
@@ -123,11 +123,11 @@
 											<span class="glyphicon glyphicon-edit"></span>Edit
 										</button></td>
 										<td>{{ticket.referenceNo}}</td>
-										<td><select class="form-control" ng-model="ticket.user" ng-options="user.username for user in users"></select></td>
+										<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users"></select></td>
 										<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
 										<td>{{ticket.customerDepartment}}</td>
 										<td>{{ticket.subject}}</td>
-										<td><select class="form-control" ng-model="ticket.status" ng-options="status for (status,id) in statuses"></td>
+										<td><select class="form-control" ng-model="ticket.status" ng-options="status for status in statuses"></td>
 									</tr>
 								</tbody>
 							</table>
@@ -135,7 +135,7 @@
 						</section>
 					</div>
 				</tab>
-				<tab heading="Closed tickets">
+				<tab heading="Closed">
 					<div class="row-fluid">
 
 						<section >
@@ -166,17 +166,17 @@
 											<span class="glyphicon glyphicon-edit"></span>Edit
 										</button></td>
 										<td>{{ticket.referenceNo}}</td>
-										<td><select class="form-control" ng-model="ticket.user" ng-options="user.username for user in users"></select></td>
+										<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users"></select></td>
 										<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
 										<td>{{ticket.customerDepartment}}</td>
 										<td>{{ticket.subject}}</td>
-										<td><select class="form-control" ng-model="ticket.status" ng-options="status for (status,id) in statuses"></td>
+										<td><select class="form-control" ng-model="ticket.status" ng-options="status for status in statuses"></td>
 									</tr>
 								</tbody>
 							</table>
 					</div>
 				</tab>
-				<tab heading="Search" ng-controller="TicketCtrl">
+				<tab heading="Search">
 					<div style="margin-top: 20px;" class="container-fluid">
 						<form >
 							<div class="row-fluid form-group col-md-6 col-md-offset-3">
@@ -224,11 +224,11 @@
 										<span class="glyphicon glyphicon-edit"></span>Edit
 									</button></td>
 									<td>{{ticket.referenceNo}}</td>
-									<td><select class="form-control" ng-model="ticket.user" ng-options="user.username for user in users"></select></td>
+									<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users"></select></td>
 									<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
 									<td>{{ticket.customerDepartment}}</td>
 									<td>{{ticket.subject}}</td>
-									<td><select class="form-control" ng-model="ticket.status" ng-options="status for (status,id) in statuses"></td>
+									<td><select class="form-control" ng-model="ticket.status" ng-options="status for status in statuses"></td>
 								</tr>
 							</tbody>
 						</table>

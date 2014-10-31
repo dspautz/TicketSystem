@@ -3,9 +3,6 @@ class TicketsController < ApplicationController
   
   def index
     @tickets = Ticket.all
-    @tickets.each do |ticket|
-      p ticket
-    end
     respond_with @tickets
   end
 
@@ -37,14 +34,16 @@ class TicketsController < ApplicationController
   def update
     p "Params: #{params}"
     @ticket = Ticket.find params[:id]
-
-    params[:ticket][:user_id]=params[:ticket][:user][:id]
-
     respond_with @ticket.update(ticket_params)
   end
   
   def show
-    @ticket = Ticket.find_by_reference_no(params[:ref])
+    p "Show-Params: #{params}"
+    if params[:ref]
+      @ticket = Ticket.find_by_reference_no(params[:ref])
+    else
+      @ticket = Ticket.find(params[:id])
+    end
     p @ticket
   end
   

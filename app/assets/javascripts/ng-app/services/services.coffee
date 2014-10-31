@@ -17,7 +17,9 @@ angular.module('OnApp').factory('Ticket', ['railsResourceFactory', 'railsSeriali
     serializer: railsSerializer -> 
       @resource 'user', 'User'
   
-  resource::user = -> User.get @userId         
+  resource.prototype.getUser = -> 
+    console.log("ticket.getUser("+@userId+")")
+    return User.get(@userId)
     
   return resource      
 ])
@@ -41,7 +43,9 @@ angular.module('OnApp').factory('Request', ['railsResourceFactory', 'railsSerial
     serializer: railsSerializer -> 
       @resource 'ticket', 'Ticket'
   
-  resource::ticket = -> Ticket.get @ticketId         
+  resource.prototype.getTicket = -> 
+    console.log("request.getTicket("+@ticketId+")")
+    return Ticket.get(@ticketId)      
     
   return resource      
 ])
@@ -52,15 +56,15 @@ angular.module('OnApp').factory('User', ['railsResourceFactory', (railsResourceF
         name: 'user' 
 ])
 
-angular.module('OnApp').factory('UserSearch', ['railsResourceFactory', (railsResourceFactory) ->
-    return railsResourceFactory
-        url: '/api/users/search',
-        name: 'userSearch' 
-])
+#angular.module('OnApp').factory('UserSearch', ['railsResourceFactory', (railsResourceFactory) ->
+#    return railsResourceFactory
+#        url: '/api/users/search',
+#        name: 'userSearch' 
+#])
 
 
-angular.module('OnApp').factory('StatusList', ['railsResourceFactory', (railsResourceFactory) ->
-    return railsResourceFactory
-        url: '/api/status_list',
-        name: 'statusList' 
-])
+#angular.module('OnApp').factory('StatusList', ['railsResourceFactory', (railsResourceFactory) ->
+#    return railsResourceFactory
+#        url: '/api/status_list',
+#        name: 'statusList' 
+#])
