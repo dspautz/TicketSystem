@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141031121310) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "requests", force: true do |t|
     t.text     "report"
     t.integer  "ticket_id"

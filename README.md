@@ -3,7 +3,7 @@ Requirements
 node.js
 bower
 
-bundle gem
+bundle install
 rake bower:install
 
 rake db:create
