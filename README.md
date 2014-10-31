@@ -8,11 +8,8 @@ Example application to create Issue report tickets for customers and to manage t
 
 ```
 $ sudo apt-get install nodejs
-
 $ sudo apt-get install npm
-
 $ npm install -g bower
-
 $ npm install -g cucumber
 
 ```
@@ -28,7 +25,6 @@ $ rake bower:install
 ```
 $ rake db:create
 $ rake db:migrate
-
 $ rake db:seed
 ```
 
@@ -69,3 +65,11 @@ config/environments/*.rb
 
 Username: admin
 Password: password
+
+## License
+
+No License at the moment
+
+## Authors & contributors
+
+* David Spautz <d.spautz@mail.com>
