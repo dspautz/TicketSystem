@@ -61,11 +61,44 @@ config/environments/*.rb
   #config.action_mailer.raise_delivery_errors = true
 ```
 
+## Most important used technology
+
+⋅⋅* Angular.js
+⋅⋅* Cucumber
+⋅⋅* Rails 4.1
+⋅⋅* Twitter Bootstrap
+⋅⋅* Angular Bootstrap UI
+⋅⋅* Rspec
+⋅⋅* Jasmin Javascript
+⋅⋅* Teaspoon
+⋅⋅* Haml
+⋅⋅* Angular Rails-Route
+⋅⋅* Angular Templates
+⋅⋅* Capybara
+⋅⋅* Selenium Webdriver
+⋅⋅* Bower
+⋅⋅* Node.js
+
 ## Default User
 
 Username: admin
 
 Password: password
+
+## ToDo's
+
+⋅⋅* Dynamic Ticket links
+⋅⋅* Create/Update/Delete Ticket requests
+⋅⋅* Encrypted user passwords
+⋅⋅* Staff management
+⋅⋅* General Routing
+⋅⋅* Dialogs and output information
+⋅⋅* Cucumber Tests
+⋅⋅* Logging and Exception handling
+⋅⋅* Documentation
+⋅⋅* Searchmask redesign with AND/OR syntax
+⋅⋅* Redesign Mail-content
+⋅⋅* Format Date output
 
 ## License
 
