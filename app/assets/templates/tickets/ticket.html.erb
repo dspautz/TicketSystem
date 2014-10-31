@@ -1,0 +1,72 @@
+<div class="container-fluid" ng-controller="TicketCtrl">
+	<h1>Management Interface</h1>
+	<div class="row-fluid">
+		
+		<section >
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th colspan="2" class="text-center info"><h2>Ticket (Reference No. {{current_ticket.referenceNo}})</h2></th>
+					</tr>
+				</thead>
+
+				<tbody class="table-striped" >
+					<tr>
+						<td>Status:</td>
+						<td>{{current_ticket.status}}</td>
+					</tr>
+					<tr>
+						<td>Created at:</td>
+						<td>{{current_ticket.createdAt}}</td>
+					</tr>
+					<tr>
+						<td>Last update:</td>
+						<td>{{current_ticket.updatedAt}}</td>
+					</tr>
+					<tr>
+						<td>Owner:</td>
+						<td>{{currentTicketOwner.username}}</td>
+					</tr>
+					<tr>
+						<td>Customer name:</td>
+						<td>{{current_ticket.customerName}}</td>
+					</tr>
+					<tr>
+						<td>Customer email:</td>
+						<td>{{current_ticket.customerEmail}}</td>
+					</tr>
+					<tr>
+						<td>Customer department:</td>
+						<td>{{current_ticket.customerDepartment}}</td>
+					</tr>
+					<tr>
+						<td>Subject:</td>
+						<td>{{current_ticket.subject}}</td>
+					</tr>
+					
+					
+				</tbody>
+			</table>
+			
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th colspan="2" class="text-center info"><h2>Report History</h2></th>
+					</tr>
+				</thead>
+				<tbody class="table-striped" >
+					<tr>
+						<th class="text-center">Date</td> 
+						<th class="text-center">Report</th>
+					</tr>
+					<tr ng-repeat="request in currentTicketRequests">
+						<td>{{request.createdAt}}</td>
+						<td>{{request.report}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</section>
+	</div>
+</div>
+

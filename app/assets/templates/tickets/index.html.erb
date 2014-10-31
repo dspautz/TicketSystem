@@ -1,0 +1,243 @@
+<div class="container-fluid">
+	<h1>Management Interface</h1>
+
+	<section ng-controller="TicketCtrl">
+		 {{message}}
+		<div ng-controller="TicketTabsCtrl">
+
+			<tabset justified="true">
+				<tab heading="New unassigned tickets">
+					<div class="row-fluid">
+
+						<section >
+							<table class="table table-bordered table-hover">
+								<thead>
+
+									<tr>
+										<th></th>
+										<th>Reference No.</th>
+										<th>Owner</th>
+										<th>Customer</th>
+										<th>Department</th>
+										<th>Subject</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+
+								<tbody class="table-striped" >
+									<tr ng-repeat="ticket in tickets">
+										<td>
+										<button class="btn btn-default" ng-click="update(ticket)" >
+											<span class="glyphicon glyphicon-floppy-save"></span>Save
+										</button>
+										<button class="btn btn-default" confirm-message="Are you sure?" confirm-click="delete(ticket)" >
+											<span class="glyphicon glyphicon-remove"></span>Delete
+										</button>
+										<button class="btn btn-default" ng-click="edit(ticket)" >
+											<span class="glyphicon glyphicon-edit"></span>Edit
+										</button></td>
+										<td>{{ticket.referenceNo}}</td>
+										<td><select class="form-control" ng-model="ticket.user" ng-options="user.username for user in users"></select></td>
+										<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
+										<td>{{ticket.customerDepartment}}</td>
+										<td>{{ticket.subject}}</td>
+										<td><select class="form-control" ng-model="ticket.status" ng-options="status for (status,id) in statuses"></td>
+									</tr>
+								</tbody>
+							</table>
+
+						</section>
+					</div>
+				</tab>
+				<tab heading="Open tickets">
+					<div class="row-fluid">
+
+						<section >
+							<table class="table table-bordered table-hover">
+								<thead>
+
+									<tr>
+										<th></th>
+										<th>Reference No.</th>
+										<th>Owner</th>
+										<th>Customer</th>
+										<th>Department</th>
+										<th>Subject</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+
+								<tbody class="table-striped" >
+									<tr ng-repeat="ticket in tickets">
+										<td>
+										<button class="btn btn-default" ng-click="update(ticket)" >
+											<span class="glyphicon glyphicon-floppy-save"></span>Save
+										</button>
+										<button class="btn btn-default" confirm-message="Are you sure?" confirm-click="delete(ticket)" >
+											<span class="glyphicon glyphicon-remove"></span>Delete
+										</button>
+										<button class="btn btn-default" ng-click="edit(ticket)" >
+											<span class="glyphicon glyphicon-edit"></span>Edit
+										</button></td>
+										<td>{{ticket.referenceNo}}</td>
+										<td><select class="form-control" ng-model="ticket.user" ng-options="user.username for user in users"></select></td>
+										<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
+										<td>{{ticket.customerDepartment}}</td>
+										<td>{{ticket.subject}}</td>
+										<td><select class="form-control" ng-model="ticket.status" ng-options="status for (status,id) in statuses"></td>
+									</tr>
+								</tbody>
+							</table>
+
+						</section>
+					</div>
+				</tab>
+				<tab heading="On hold tickets">
+					<div class="row-fluid">
+
+						<section >
+							<table class="table table-bordered table-hover">
+								<thead>
+
+									<tr>
+										<th></th>
+										<th>Reference No.</th>
+										<th>Owner</th>
+										<th>Customer</th>
+										<th>Department</th>
+										<th>Subject</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+
+								<tbody class="table-striped" >
+									<tr ng-repeat="ticket in tickets">
+										<td>
+										<button class="btn btn-default" ng-click="update(ticket)" >
+											<span class="glyphicon glyphicon-floppy-save"></span>Save
+										</button>
+										<button class="btn btn-default" confirm-message="Are you sure?" confirm-click="delete(ticket)" >
+											<span class="glyphicon glyphicon-remove"></span>Delete
+										</button>
+										<button class="btn btn-default" ng-click="edit(ticket)" >
+											<span class="glyphicon glyphicon-edit"></span>Edit
+										</button></td>
+										<td>{{ticket.referenceNo}}</td>
+										<td><select class="form-control" ng-model="ticket.user" ng-options="user.username for user in users"></select></td>
+										<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
+										<td>{{ticket.customerDepartment}}</td>
+										<td>{{ticket.subject}}</td>
+										<td><select class="form-control" ng-model="ticket.status" ng-options="status for (status,id) in statuses"></td>
+									</tr>
+								</tbody>
+							</table>
+
+						</section>
+					</div>
+				</tab>
+				<tab heading="Closed tickets">
+					<div class="row-fluid">
+
+						<section >
+							<table class="table table-bordered table-hover">
+								<thead>
+
+									<tr>
+										<th></th>
+										<th>Reference No.</th>
+										<th>Owner</th>
+										<th>Customer</th>
+										<th>Department</th>
+										<th>Subject</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+
+								<tbody class="table-striped" >
+									<tr ng-repeat="ticket in tickets">
+										<td>
+										<button class="btn btn-default" ng-click="update(ticket)" >
+											<span class="glyphicon glyphicon-floppy-save"></span>Save
+										</button>
+										<button class="btn btn-default" confirm-message="Are you sure?" confirm-click="delete(ticket)" >
+											<span class="glyphicon glyphicon-remove"></span>Delete
+										</button>
+										<button class="btn btn-default" ng-click="edit(ticket)" >
+											<span class="glyphicon glyphicon-edit"></span>Edit
+										</button></td>
+										<td>{{ticket.referenceNo}}</td>
+										<td><select class="form-control" ng-model="ticket.user" ng-options="user.username for user in users"></select></td>
+										<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
+										<td>{{ticket.customerDepartment}}</td>
+										<td>{{ticket.subject}}</td>
+										<td><select class="form-control" ng-model="ticket.status" ng-options="status for (status,id) in statuses"></td>
+									</tr>
+								</tbody>
+							</table>
+					</div>
+				</tab>
+				<tab heading="Search" ng-controller="TicketCtrl">
+					<div style="margin-top: 20px;" class="container-fluid">
+						<form >
+							<div class="row-fluid form-group col-md-6 col-md-offset-3">
+								<select class="form-control" ng-model="searchObj.searchType" ng-options="type for type in searchTypes">
+									<option value="{{searchTypes[0]}}">{{searchTypes[0]}}</option>
+								</select>
+
+								<label class="sr-only">Search:</label>
+								<input ng-model="searchObj.key" type="text" autofocus class="form-control" placeholder="search" required>
+
+								<button ng-click="search(searchObj)" class="btn btn-primary">
+									<span class="glyphicon glyphicon-search"> </span>Search
+								</button>
+
+							</div>
+						</form>
+					</div>
+
+					<div class="container-fluid" ng-show="showSearchResult" >
+
+						<table class="table table-bordered table-hover">
+							<thead>
+
+								<tr>
+									<th></th>
+									<th>Reference No.</th>
+									<th>Owner</th>
+									<th>Customer</th>
+									<th>Department</th>
+									<th>Subject</th>
+									<th>Status</th>
+								</tr>
+							</thead>
+
+							<tbody class="table-striped" >
+								<tr ng-repeat="ticket in searchResult">
+									<td>
+									<button class="btn btn-default" ng-click="update(ticket)" >
+										<span class="glyphicon glyphicon-floppy-save"></span>Save
+									</button>
+									<button class="btn btn-default" confirm-message="Are you sure?" confirm-click="delete(ticket)" >
+										<span class="glyphicon glyphicon-remove"></span>Delete
+									</button>
+									<button class="btn btn-default" ng-click="edit(ticket)" >
+										<span class="glyphicon glyphicon-edit"></span>Edit
+									</button></td>
+									<td>{{ticket.referenceNo}}</td>
+									<td><select class="form-control" ng-model="ticket.user" ng-options="user.username for user in users"></select></td>
+									<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
+									<td>{{ticket.customerDepartment}}</td>
+									<td>{{ticket.subject}}</td>
+									<td><select class="form-control" ng-model="ticket.status" ng-options="status for (status,id) in statuses"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</tab>
+			</tabset>
+		</div>
+	</section>
+	</section>
+
+</div>
+

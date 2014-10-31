@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>New ticket <%= @ticket.reference_no %> created.</h1>
+		<p>Subject: <%= @ticket.subject %></p>
+		<p>Status: <%= @ticket.status %></p>
+    <p>
+      To show your Ticket, just follow this link: <a href="<%= @link %>" target="_self"><%= @link %></a>.
+    </p>
+    <p>Thanks for reporting!</p>
+  </body>
+</html>

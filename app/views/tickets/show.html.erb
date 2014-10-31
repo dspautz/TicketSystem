@@ -1,0 +1,67 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+
+		<section >
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th colspan="2" class="text-center info"><h2>Ticket (Reference No. <%= @ticket.reference_no %>)</h2></th>
+					</tr>
+				</thead>
+
+				<tbody class="table-striped" >
+					<tr>
+						<td>Status:</td>
+						<td><%= @ticket.status %></td>
+					</tr>
+					<tr>
+						<td>Created at:</td>
+						<td><%= @ticket.created_at %></td>
+					</tr>
+					<tr>
+						<td>Last update:</td>
+						<td><%= @ticket.updated_at %></td>
+					</tr>
+					<tr>
+						<td>Owner:</td>
+						<td> <%= @ticket.user ? @ticket.user.username : "Currently not assigned!" %> </td>
+					</tr>
+					<tr>
+						<td>Customer name:</td>
+						<td><%= @ticket.customer_name %></td>
+					</tr>
+					<tr>
+						<td>Customer email:</td>
+						<td><%= @ticket.customer_email %></td>
+					</tr>
+					<tr>
+						<td>Subject:</td>
+						<td><%= @ticket.subject %></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th colspan="2" class="text-center info"><h2>Report History</h2></th>
+					</tr>
+				</thead>
+				<tbody class="table-striped" >
+					<tr>
+						<th class="text-center">Date</td> 
+						<th class="text-center">Report</th>
+					</tr>
+					<% @ticket.requests.each do |request| %>
+					<tr>
+						<td><%= request.created_at %></td>
+						<td><%= request.report %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+
+		</section>
+	</div>
+</div>
+

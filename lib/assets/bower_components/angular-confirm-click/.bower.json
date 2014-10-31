@@ -1,0 +1,23 @@
+{
+  "name": "angular-confirm-click",
+  "version": "0.0.4",
+  "main": "dist/confirmClick.js",
+  "ignore": [
+    "**/.*",
+    "app",
+    "test"
+  ],
+  "dependencies": {
+    "angular": "^1.2.4"
+  },
+  "homepage": "https://github.com/DiUS/angular-confirm-click",
+  "_release": "0.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.4",
+    "commit": "4da19be881ac4b31be2690c4d5c860aa3637c31e"
+  },
+  "_source": "git://github.com/DiUS/angular-confirm-click.git",
+  "_target": "*",
+  "_originalSource": "angular-confirm-click"
+}
