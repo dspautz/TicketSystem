@@ -1,4 +1,4 @@
-@onApp = angular.module('OnApp', [
+@ticketSystem = angular.module('TicketSystem', [
   'templates',
   'ngRoute',
   'rails',
@@ -7,20 +7,20 @@
 ])
 
 # for compatibility with Rails CSRF protection
-@onApp.config([
+@ticketSystem.config([
   '$httpProvider', ($httpProvider)->
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
 ])
 
 
 
-@onApp.config([ '$locationProvider', 
+@ticketSystem.config([ '$locationProvider', 
   ($locationProvider)->
     $locationProvider.html5Mode(enabled: true);
     
 ])
 
-@onApp.config([ '$routeProvider', 
+@ticketSystem.config([ '$routeProvider', 
   ($routeProvider)->
     $routeProvider
       .when('/',
@@ -42,7 +42,7 @@
       
 ])
 
-@onApp.run( ->
+@ticketSystem.run( ->
   console.log 'angular app running'  
 )
 

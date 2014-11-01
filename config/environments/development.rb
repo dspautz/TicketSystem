@@ -43,13 +43,13 @@ Rails.application.configure do
     address:              'smtp.mail.com',
     port:                 587,
     domain:               '@mail.com',
-    user_name:            'example@mail.com',
-    password:             '***',
+    user_name:            'd.spautz@mail.com',
+    password:             'P05st_Master',
     authentication:       'plain',
     enable_starttls_auto: true,
     return_response: true
   }
-  config.action_mailer.default_options = {from: 'example@mail.com'}
+  config.action_mailer.default_options = {from: 'd.spautz@mail.com'}
   
   #config.action_mailer.delivery_method = :sendmail
   # Defaults to:

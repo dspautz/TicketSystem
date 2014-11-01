@@ -1,2 +1,2 @@
-angular.module('OnApp').controller("HomeCtrl", [ '$scope', ($scope)-> 
+angular.module('TicketSystem').controller("HomeCtrl", [ '$scope', ($scope)-> 
 ])

@@ -1,4 +1,4 @@
-angular.module('OnApp').controller("TicketRequestCtrl", [ '$scope', '$location', '$window', 'Ticket', 'User', 'TicketRequest','TicketRequestSearch', ($scope, $location, $window, Ticket, User, TicketRequest, TicketRequestSearch)->
+angular.module('TicketSystem').controller("TicketRequestCtrl", [ '$scope', '$location', '$window', 'Ticket', 'User', 'TicketRequest','TicketRequestSearch', ($scope, $location, $window, Ticket, User, TicketRequest, TicketRequestSearch)->
     
   $scope.newTicketRequest=null
   $scope.currentTicketRequest=null

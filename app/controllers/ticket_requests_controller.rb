@@ -39,6 +39,7 @@ class TicketRequestsController < ApplicationController
   
   def show
     p "Params: #{params}"
+    respond_with TicketRequest.find(params[:id])
   end
   
   

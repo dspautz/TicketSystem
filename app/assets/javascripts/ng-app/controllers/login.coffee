@@ -1,4 +1,4 @@
-angular.module('OnApp').controller("LoginCtrl", [ '$scope', '$location', 'Login', ($scope, $location, Login)->
+angular.module('TicketSystem').controller("LoginCtrl", [ '$scope', '$location', 'Login', ($scope, $location, Login)->
  
         
     
