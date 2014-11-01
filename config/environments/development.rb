@@ -39,17 +39,18 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.mail.com',
-    port:                 587,
-    domain:               '@mail.com',
-    user_name:            'example@mail.com',
-    password:             '***',
-    authentication:       'plain',
-    enable_starttls_auto: true,
-    return_response: true
-  }
-  config.action_mailer.default_options = {from: 'example@mail.com'}
+  
+  #config.action_mailer.smtp_settings = {
+  #  address:              'smtp.mail.com',
+  #  port:                 587,
+  #  domain:               '@mail.com',
+  #  user_name:            'example@mail.com',
+  #  password:             '***',
+  #  authentication:       'plain',
+  #  enable_starttls_auto: true,
+  #  return_response: true
+  #}
+  #config.action_mailer.default_options = {from: 'd.spautz@mail.com'}
   
   #config.action_mailer.delivery_method = :sendmail
   # Defaults to:
