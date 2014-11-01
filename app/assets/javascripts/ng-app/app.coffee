@@ -2,7 +2,6 @@
   'templates',
   'ngRoute',
   'rails',
-  'ngDialog',
   'confirmClick',
   "ui.bootstrap"
 ])
@@ -41,15 +40,6 @@
      #   redirectTo: '/'
      # )
       
-])
-
-@onApp.config(['ngDialogProvider', (ngDialogProvider) ->
-    ngDialogProvider.setDefaults(
-        className: 'ngdialog-theme-default',
-        showClose: true,
-        closeByDocument: true,
-        closeByEscape: true
-    )
 ])
 
 @onApp.run( ->

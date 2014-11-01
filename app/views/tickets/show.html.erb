@@ -52,10 +52,10 @@
 						<th class="text-center">Date</td> 
 						<th class="text-center">Report</th>
 					</tr>
-					<% @ticket.requests.each do |request| %>
+					<% @ticket.ticket_requests.each do |ticket_request| %>
 					<tr>
-						<td><%= request.created_at %></td>
-						<td><%= request.report %></td>
+						<td><%= ticket_request.created_at %></td>
+						<td><%= ticket_request.report %></td>
 					</tr>
 					<% end %>
 				</tbody>

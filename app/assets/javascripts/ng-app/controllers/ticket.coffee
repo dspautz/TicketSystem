@@ -1,18 +1,14 @@
-angular.module('OnApp').controller("TicketCtrl", [ '$scope', '$location', '$window', 'Ticket', 'User', 'Request', 'ngDialog', 'TicketSearch', 'RequestSearch', ($scope, $location, $window, Ticket, User, Request, ngDialog, TicketSearch, RequestSearch)->
+angular.module('OnApp').controller("TicketCtrl", [ '$scope', '$location', '$window', 'Ticket', 'User', 'TicketSearch', ($scope, $location, $window, Ticket, User, TicketSearch)->
  
   $scope.message=""
   $scope.currentTicket=$window.currentTicket
   
   if $scope.currentTicket
-    RequestSearch.query({ticket_id: $scope.currentTicket.id}).then (requests) ->
-      $scope.currentTicketRequests = requests
-      
     $scope.currentTicket.getUser().then (user) ->
       $scope.currentTicketOwner = user    
       
   $scope.tickets=[]
   $scope.users=[]
-  $scope.action=$window.ticket_action
   $scope.searchObj=null
   $scope.searchTypes=["Search by subject", "Search by keywords", "Search by reference no."]
   $scope.statuses=[ "Waiting for Staff Response", "Waiting for Customer", "On Hold", "Cancelled", "Complete" ]
@@ -44,15 +40,10 @@ angular.module('OnApp').controller("TicketCtrl", [ '$scope', '$location', '$wind
         $scope.currentTicket=null
         
         
-  $scope.delete = (currentTicket) ->  currentTicket.delete().then (result) ->
-    if result
-      $scope.tickets.splice $scope.tickets.indexOf(currentTicket), 1
-      ngDialog.open({ 
-        template: 'dialogs/error.html',
-        scope: $scope,
-        className: 'ngdialog-theme-default',
-        
-      })
+  $scope.delete = (currentTicket) ->  
+    currentTicket.delete().then (ticket) ->
+      if ticket
+        $scope.tickets.splice $scope.tickets.indexOf(currentTicket), 1
       
   $scope.update = (currentTicket) -> currentTicket.update().then (result) ->
     if result
@@ -70,9 +61,32 @@ angular.module('OnApp').controller("TicketCtrl", [ '$scope', '$location', '$wind
     TicketSearch.query({searchType: searchType, searchKey: searchKey}).then (tickets) ->   
       $scope.searchResult = tickets
       $scope.showSearchResult=true 
+      
+      
+ # Filter
+ 
+   $scope.isNew = (ticket) ->
+      if ticket.status=="Waiting for Staff Response"
+        return true
+      return false
+      
+   $scope.isWaiting = (ticket) ->
+      if ticket.status=="Waiting for Customer"
+        return true
+      return false
+      
+   $scope.isOnHold = (ticket) ->
+      if ticket.status=="On Hold"
+        return true
+      return false
+      
+   $scope.isClosed = (ticket) ->
+      if ticket.status=="Cancelled" || ticket.status=="Complete"
+        return true
+      return false
 ])
 
-angular.module('OnApp').controller('TicketTabsCtrl', ($scope) ->
+angular.module('OnApp').controller('TabsCtrl', ($scope) ->
   $scope.tabs = [
     { title:'Dynamic Title 1', content:'Dynamic content 1' },
     { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }

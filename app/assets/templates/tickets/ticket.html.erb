@@ -1,8 +1,7 @@
 <div class="container-fluid" ng-controller="TicketCtrl">
 	<h1>Management Interface</h1>
 	<div class="row-fluid">
-
-		<section >
+		<section>
 			<table class="table table-bordered table-hover">
 				<thead>
 					<tr>
@@ -47,36 +46,35 @@
 				</tbody>
 			</table>
 
-			<table class="table table-bordered">
+			<table ng-controller="TicketRequestCtrl" class="table table-bordered">
 				<thead>
 					<tr>
 						<th colspan="3" class="text-left info">
-						<form ng-controller="RequestCtrl" style="float:right;">				
-								<label class="sr-only">Message</label>
-								<textarea style="float:left; margin-right:20px;" cols="100" rows="4" ng-model="newRequest.report" autofocus placeholder="your message" required></textarea>
-								<button ng-click="create(newRequest)" style="height:100px;" class="btn btn-primary">
-									<span class="glyphicon glyphicon-floppy-save"> </span>Request Ticket
-								</button><span>{{message}}</span>
-						</form>
-						<h2 class="text-left>Report History</h2></th>
+						<form style="float:right;">
+							<label class="sr-only">Request</label>
+							<textarea style="float:left; margin-right:20px;" cols="100" rows="4" ng-model="newTicketRequest.report" autofocus placeholder="your message" required></textarea>
+							<button ng-click="create(newTicketRequest)" style="height:100px;" class="btn btn-primary">
+								<span class="glyphicon glyphicon-floppy-save"> </span>Request Ticket
+							</button>
+						</form><h2 class="text-left">Report History</h2><span>{{message}}</span></th>
 					</tr>
 				</thead>
+
 				<tbody class="table-striped" >
 					<tr>
 						<th></th>
-						<th class="text-center">Date</td> <th class="text-center">Report</th>
+						<th class="text-center">Date</th>
+						<th class="text-center">Report</th>
 					</tr>
-					<tr ng-repeat="request in currentTicketRequests">
-						<td ng-controller="RequestCtrl">
-						<button class="btn btn-default" confirm-message="Are you sure?" confirm-click="deleteRequest(request)" >
-							<span class="glyphicon glyphicon-remove"/>Delete
-						</button>
-						<button class="btn btn-default" ng-click="editRequest(request)" >
-							<span class="glyphicon glyphicon-edit"/>Edit
+
+					<tr ng-repeat="ticketRequest in currentTicketRequests">
+						<td>
+						<button class="btn btn-default" confirm-message="Are you sure?" confirm-click="delete(ticketRequest)" >
+							<span class="glyphicon glyphicon-remove"></span>Delete
 						</button></td>
 
-						<td>{{request.createdAt}}</td>
-						<td>{{request.report}}</td>
+						<td>{{ticketRequest.createdAt}}</td>
+						<td>{{ticketRequest.report}}</td>
 					</tr>
 				</tbody>
 			</table>

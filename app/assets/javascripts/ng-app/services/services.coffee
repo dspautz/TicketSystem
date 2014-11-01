@@ -30,21 +30,21 @@ angular.module('OnApp').factory('TicketSearch', ['railsResourceFactory', (railsR
         name: 'ticketSearch' 
 ])
 
-angular.module('OnApp').factory('RequestSearch', ['railsResourceFactory', (railsResourceFactory) ->
+angular.module('OnApp').factory('TicketRequestSearch', ['railsResourceFactory', (railsResourceFactory) ->
     return railsResourceFactory
-        url: '/api/requests/search',
+        url: '/api/ticket_requests/search',
         name: 'requestSearch' 
 ])
 
-angular.module('OnApp').factory('Request', ['railsResourceFactory', 'railsSerializer', 'Ticket', (railsResourceFactory, railsSerializer, Ticket) ->
+angular.module('OnApp').factory('TicketRequest', ['railsResourceFactory', 'railsSerializer', 'Ticket', (railsResourceFactory, railsSerializer, Ticket) ->
   resource = railsResourceFactory
-    url: '/api/requests',
-    name: 'request',
+    url: '/api/ticket_requests',
+    name: 'ticketRequest',
     serializer: railsSerializer -> 
       @resource 'ticket', 'Ticket'
   
   resource.prototype.getTicket = -> 
-    console.log("request.getTicket("+@ticketId+")")
+    console.log("ticketRequest.getTicket("+@ticketId+")")
     return Ticket.get(@ticketId)      
     
   return resource      

@@ -87,10 +87,11 @@ Password: password
 
 ## ToDo's
 
-* Dynamic Ticket links
-* Create/Update/Delete Ticket requests
+* Delete Ticket requests
 * Encrypted user passwords
 * Staff management
+* Roles management
+* Status management
 * General Routing
 * Dialogs and output information
 * Cucumber Tests
@@ -100,6 +101,7 @@ Password: password
 * Redesign Mail-content
 * Format Date output
 * HAML formatting
+* Logout and session invalidation
 
 ## License
 

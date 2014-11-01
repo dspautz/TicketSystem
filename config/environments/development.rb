@@ -40,16 +40,16 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    address:              'smtp.domain.com',
+    address:              'smtp.mail.com',
     port:                 587,
-    domain:               '@domain.com',
-    user_name:            'example@domain.com',
+    domain:               '@mail.com',
+    user_name:            'example@mail.com',
     password:             '***',
     authentication:       'plain',
     enable_starttls_auto: true,
     return_response: true
   }
-  config.action_mailer.default_options = {from: 'example@domain.com'}
+  config.action_mailer.default_options = {from: 'example@mail.com'}
   
   #config.action_mailer.delivery_method = :sendmail
   # Defaults to:

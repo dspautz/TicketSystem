@@ -1,6 +1,6 @@
 class CreateRequests < ActiveRecord::Migration
   def change
-    create_table :requests do |t|
+    create_table :ticket_requests do |t|
       t.text :report
       t.belongs_to :ticket
 
@@ -9,6 +9,6 @@ class CreateRequests < ActiveRecord::Migration
   end
   
   def down
-    drop_table :requests
+    drop_table :ticket_requests
   end
 end

@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   scope :api, defaults: {format: :json} do
     match 'sign_in', to: 'application#sign_in', via: [:get]
     match 'sign_out', to: 'application#sign_out', via: [:get]
-    match 'tickets/search', to: 'tickets#search', via: [:get]
-    match 'requests/search', to: 'requests#search_by_ticket_id', via: [:get]
+    match 'tickets/search', to: 'tickets#search_by_params', via: [:get]
+    match 'ticket_requests/search', to: 'ticket_requests#search_by_ticket_id', via: [:get]
    
     resources :users
     resources :tickets
-    resource :requests
+    resource :ticket_requests
   end
   
   get '/tickets/show' => 'tickets#show'  

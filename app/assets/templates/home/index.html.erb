@@ -24,22 +24,22 @@
   <form>
     <div class="form-group col-md-6 col-md-offset-3">
       <label class="sr-only">Name:</label>
-      <input ng-model="current_ticket.customer_name" type="text" autofocus class="form-control" placeholder="your name" required>
+      <input ng-model="currentTicket.customerName" type="text" autofocus class="form-control" placeholder="your name" required>
       
       <label class="sr-only">Email:</label>
-      <input ng-model="current_ticket.customer_email" type="email" autofocus class="form-control" placeholder="example@domain.com" required>
+      <input ng-model="currentTicket.customerEmail" type="email" autofocus class="form-control" placeholder="example@domain.com" required>
       
       <label class="sr-only">Department:</label>
-      <input ng-model="current_ticket.customer_department" type="text" autofocus class="form-control" placeholder="your department" required>
+      <input ng-model="currentTicket.customerDepartment" type="text" autofocus class="form-control" placeholder="your department" required>
       
       <label class="sr-only">Subject:</label>
-      <input ng-model="current_ticket.subject" type="text" autofocus class="form-control" placeholder="Subject" required>
+      <input ng-model="currentTicket.subject" type="text" autofocus class="form-control" placeholder="Subject" required>
       
       <label class="sr-only">Issue:</label>
-      <textarea ng-model="current_ticket.request.report" rows="20" autofocus class="input-large form-control col-lg-4 col-md-4 col-sm-5" placeholder="issue report" required/>
+      <textarea ng-model="currentTicket.ticketRequest.report" rows="20" autofocus class="input-large form-control col-lg-4 col-md-4 col-sm-5" placeholder="issue report" required/>
     </div>
     <div class="form-group col-md-6 col-md-offset-3 text-left">
-      <button ng-click="create(current_ticket)" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-save"> </span>Create</button><span>{{message}}</span>
+      <button ng-click="create(currentTicket)" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-save"> </span>Create</button><span>{{message}}</span>
     </div>
   </form>
 </section>

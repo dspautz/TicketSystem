@@ -1,5 +1,6 @@
 class TicketsController < ApplicationController
   respond_to :json
+  before_filter :beforeFilter
   
   def index
     @tickets = Ticket.all
@@ -10,10 +11,10 @@ class TicketsController < ApplicationController
     p "Params: #{params}"
     
     if @ticket = Ticket.create(ticket_params)
-      @request = Request.new
-      @request.ticket_id=@ticket.id
-      @request.report=params[:ticket][:request][:report]
-      @request.save
+      @ticket_request = TicketRequest.new
+      @ticket_request.ticket_id=@ticket.id
+      @ticket_request.report=params[:ticket][:ticket_request][:report]
+      @ticket_request.save
     end
     respond_with @ticket
   end
@@ -47,14 +48,14 @@ class TicketsController < ApplicationController
     p @ticket
   end
   
-   def search
+   def search_by_params
     p "Search-Params: #{params}"
     
     # BAD CODE
     if params[:search_type]=="Search by subject"
       @tickets = Ticket.where(subject: params[:search_key])
     elsif params[:search_type]=="Search by keywords"
-      sql = "SELECT t.* FROM tickets t JOIN requests r ON t.id=r.ticket_id WHERE "
+      sql = "SELECT t.* FROM tickets t JOIN ticketRequests r ON t.id=r.ticket_id WHERE "
       words = params[:search_key].split(" ").length>0 ? params[:search_key].split(" ") : params[:search_key]
       words.each_index do |idx|
         sql += "r.report like '%#{words[idx]}%' "
@@ -74,8 +75,12 @@ class TicketsController < ApplicationController
     params.require(:ticket).permit(:reference_no, :subject, :customer_name, :customer_email, :customer_department, :status, :user_id)
   end
   
-  def request_params
-    params[:ticket].require(:request).permit(:report, :ticket_id)
+  def ticket_request_params
+    params[:ticket].require(:ticket_request).permit(:report, :ticket_id)
   end
   
+  def beforeFilter
+    # Used by Mailer to generate dynamic absolute ticket URL's
+    $request = request
+  end
 end
