@@ -1,7 +1,7 @@
 angular.module('TicketSystem').factory('TicketRequestSearch', ['railsResourceFactory', (railsResourceFactory) ->
     return railsResourceFactory
         url: '/api/ticket_requests/search',
-        name: 'requestSearch' 
+        name: 'ticketRequestSearch' 
 ])
 
 angular.module('TicketSystem').factory('TicketRequest', ['railsResourceFactory', 'railsSerializer', 'Ticket', (railsResourceFactory, railsSerializer, Ticket) ->
