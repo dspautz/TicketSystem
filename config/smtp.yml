@@ -7,29 +7,29 @@ development:
   en_mailer:
     <<: *common
     domain: "@mail.com"
-    user_name: "example@mail.com"
-    password: "****"
+    user_name: "d.spautz@mail.com"
+    password: "P05st_Master"
     address: "smtp.mail.com" 
-    from: 'example.mail.com'    
+    from: 'd.spautz.mail.com'    
   de_mailer:
     <<: *common
     domain: "@web.de"
-    user_name: "example@web.de"
-    password: "***"
+    user_name: "d.spautz@web.de"
+    password: "P05st_Master"
     address: "smtp.web.de"
-    from: 'example.web.de'
+    from: 'd.spautz.web.de'
 production:
   en_mailer:
     <<: *common
     domain: "mail.com"
     user_name: "d.spautz@mail.com"
-    password: "***"
+    password: "P05st_Master"
     address: "smtp.mail.com"
-    from: 'example.mail.com'
+    from: 'd.spautz.mail.com'
   de_mailer:
     <<: *common
     domain: "web.de"
-    user_name: "example@web.de"
-    password: "***"
+    user_name: "d.spautz@web.de"
+    password: "P05st_Master"
     address: "smtp.web.de"
-    from: 'example.web.de'
+    from: 'd.spautz.web.de'

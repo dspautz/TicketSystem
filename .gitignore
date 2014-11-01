@@ -15,6 +15,9 @@
 /log/*.log
 /tmp
 
+# Configs
+/config/*.yml
+
 *.gem
 *.rbc
 .bundle
