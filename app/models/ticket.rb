@@ -1,5 +1,6 @@
 class Ticket < ActiveRecord::Base
   belongs_to :user
+  belongs_to :ticket_status
   has_many :ticket_requests
   before_create :generate_reference_no, :set_status
   after_create :send_confirmation_email

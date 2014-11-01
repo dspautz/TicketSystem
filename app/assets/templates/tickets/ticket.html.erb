@@ -16,11 +16,11 @@
 					</tr>
 					<tr>
 						<td>Created at:</td>
-						<td>{{currentTicket.createdAt}}</td>
+						<td>{{currentTicket.createdAt | date : 'dd. MMMM yyyy hh:mm'}}</td>
 					</tr>
 					<tr>
 						<td>Last update:</td>
-						<td>{{currentTicket.updatedAt}}</td>
+						<td>{{currentTicket.updatedAt | date : 'dd. MMMM yyyy hh:mm'}}</td>
 					</tr>
 					<tr>
 						<td>Owner:</td>
@@ -73,7 +73,7 @@
 							<span class="glyphicon glyphicon-remove"></span>Delete
 						</button></td>
 
-						<td>{{ticketRequest.createdAt}}</td>
+						<td>{{ticketRequest.createdAt | date : 'dd. MMMM yyyy hh:mm'}}</td>
 						<td>{{ticketRequest.report}}</td>
 					</tr>
 				</tbody>

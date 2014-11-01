@@ -39,7 +39,10 @@
 													<span class="glyphicon glyphicon-edit"></span>Edit
 												</button></td>
 												<td>{{ticket.referenceNo}}</td>
-												<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users"></select></td>
+												<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users">
+														<option style="display:none" value="">-- select a Owner</option>
+													</select>
+												</td>
 												<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
 												<td>{{ticket.customerDepartment}}</td>
 												<td>{{ticket.subject}}</td>
@@ -82,7 +85,10 @@
 													<span class="glyphicon glyphicon-edit"></span>Edit
 												</button></td>
 												<td>{{ticket.referenceNo}}</td>
-												<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users"></select></td>
+												<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users">
+														<option style="display:none" value="">-- select a Owner</option>
+													</select>
+												</td>
 												<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
 												<td>{{ticket.customerDepartment}}</td>
 												<td>{{ticket.subject}}</td>
@@ -125,7 +131,10 @@
 													<span class="glyphicon glyphicon-edit"></span>Edit
 												</button></td>
 												<td>{{ticket.referenceNo}}</td>
-												<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users"></select></td>
+												<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users">
+														<option style="display:none" value="">-- select a Owner</option>
+													</select>
+												</td>
 												<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
 												<td>{{ticket.customerDepartment}}</td>
 												<td>{{ticket.subject}}</td>
@@ -168,7 +177,10 @@
 													<span class="glyphicon glyphicon-edit"></span>Edit
 												</button></td>
 												<td>{{ticket.referenceNo}}</td>
-												<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users"></select></td>
+												<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users">
+														<option style="display:none" value="">-- select a Owner</option>
+													</select>
+												</td>
 												<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
 												<td>{{ticket.customerDepartment}}</td>
 												<td>{{ticket.subject}}</td>
@@ -227,7 +239,10 @@
 												<span class="glyphicon glyphicon-edit"></span>Edit
 											</button></td>
 											<td>{{ticket.referenceNo}}</td>
-											<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users"></select></td>
+											<td><select class="form-control" ng-model="ticket.userId" ng-options="user.id as user.username for user in users">
+													<option style="display:none" value="">-- select a Owner</option>
+												</select>
+											</td>
 											<td>{{ticket.customerName}} [<a ng-href="mailto:{{ticket.customerEmail}}" target="_blank">{{ticket.customerEmail}}</a>]</td>
 											<td>{{ticket.customerDepartment}}</td>
 											<td>{{ticket.subject}}</td>

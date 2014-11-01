@@ -11,10 +11,12 @@ class TicketsController < ApplicationController
     p "Params: #{params}"
     
     if @ticket = Ticket.create(ticket_params)
+      ActiveRecord::Base.skip_send_email = true
       @ticket_request = TicketRequest.new
       @ticket_request.ticket_id=@ticket.id
       @ticket_request.report=params[:ticket][:ticket_request][:report]
       @ticket_request.save
+      ActiveRecord::Base.skip_send_email = false
     end
     respond_with @ticket
   end

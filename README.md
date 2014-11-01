@@ -92,16 +92,16 @@ Password: password
 * Staff management
 * Roles management
 * Status management
-* General Routing
 * Dialogs and output information
 * Cucumber Tests
 * Logging and Exception handling
 * Documentation
 * Searchmask redesign with AND/OR syntax
 * Redesign Mail-content
-* Format Date output
-* HAML formatting
 * Logout and session invalidation
+* DRY for app/asssets/templates/tickets/index.html.erb
+* Session management and Security
+* Change Ticket Owner automatically on retry
 
 ## License
 

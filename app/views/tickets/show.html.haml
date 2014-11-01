@@ -1,0 +1,47 @@
+.container-fluid
+  .row-fluid
+    %section
+      %table.table.table-bordered
+        %thead
+          %tr
+            %th.text-center.info{:colspan => "2"}
+              %h2
+                Ticket (Reference No. #{@ticket.reference_no})
+        %tbody.table-striped
+          %tr
+            %td Status:
+            %td= @ticket.status
+          %tr
+            %td Created at:
+            %td= @ticket.created_at
+          %tr
+            %td Last update:
+            %td= @ticket.updated_at
+          %tr
+            %td Owner:
+            %td
+              = @ticket.user ? @ticket.user.username : "Currently not assigned!"
+          %tr
+            %td Customer name:
+            %td= @ticket.customer_name
+          %tr
+            %td Customer email:
+            %td= @ticket.customer_email
+          %tr
+            %td Subject:
+            %td= @ticket.subject
+      %table.table.table-bordered
+        %thead
+          %tr
+            %th.text-center.info{:colspan => "2"}
+              %h2 Report History
+        %tbody.table-striped
+          %tr
+            %th.text-center
+              Date
+              %th.text-center Report
+          - @ticket.ticket_requests.each do |ticket_request|
+            %tr
+              %td= ticket_request.created_at
+              %td= ticket_request.report
+

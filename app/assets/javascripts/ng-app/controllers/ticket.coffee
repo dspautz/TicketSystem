@@ -5,7 +5,8 @@ angular.module('OnApp').controller("TicketCtrl", [ '$scope', '$location', '$wind
   
   if $scope.currentTicket
     $scope.currentTicket.getUser().then (user) ->
-      $scope.currentTicketOwner = user    
+      if user
+        $scope.currentTicketOwner = user    
       
   $scope.tickets=[]
   $scope.users=[]

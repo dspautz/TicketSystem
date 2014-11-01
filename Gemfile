@@ -46,6 +46,7 @@ gem 'angular-rails-templates'
 gem 'angularjs-rails-resource'
 gem 'angular-ui-bootstrap-rails'
 gem 'haml'
+gem 'bcrypt'
 
 group :test, :development do
   gem "rspec"

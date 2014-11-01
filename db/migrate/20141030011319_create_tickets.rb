@@ -8,6 +8,7 @@ class CreateTickets < ActiveRecord::Migration
       t.string :customer_email 
       t.string :customer_department
       t.string :reference_no
+      t.belongs_to :ticket_status
 
       t.timestamps
     end
