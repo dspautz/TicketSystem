@@ -16,7 +16,7 @@
 /tmp
 
 # Configs
-/config/*.yml
+config/*.yml
 
 *.gem
 *.rbc
