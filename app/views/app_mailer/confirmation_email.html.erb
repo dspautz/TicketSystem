@@ -6,7 +6,7 @@
   <body>
     <h1>New ticket <%= @ticket.reference_no %> created.</h1>
 		<p>Subject: <%= @ticket.subject %></p>
-		<p>Status: <%= @ticket.status %></p>
+		<p>Status: <%= @ticket.ticket_status.text %></p>
     <p>
       To show your Ticket, just follow this link: <a href="<%= @link %>" target="_self"><%= @link %></a>.
     </p>

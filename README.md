@@ -1,6 +1,7 @@
-# Angular Rails Ticket*System
+# Angular Rails Ticket-System
 
 Example application to create Issue report tickets for customers and to manage tickets by staffs. 
+It is only a project to learn some new technologies and it will be never finished.
 
 ## Requirements
 

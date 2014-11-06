@@ -22,7 +22,7 @@ angular.module('TicketSystem').controller("StaffCtrl", [ '$scope', '$location', 
     $scope.newDialogInstance.result.then (newUser) ->
       result = new User(newUser).create()
       if result?
-        $scope.users.push newUsers
+        $scope.users.push newUser
         $scope.message="New User created."
            
         

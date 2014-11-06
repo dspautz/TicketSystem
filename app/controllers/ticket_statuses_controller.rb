@@ -12,7 +12,8 @@ class TicketStatusesController < ApplicationController
   end
 
   def destroy
-    p "Prarams: #{params}"
+    p "Destroy-Prarams: #{params}"
+    respond_with TicketStatus.destroy params[:id]
   end
 
   def update

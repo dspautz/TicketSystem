@@ -8,6 +8,6 @@ class TicketRequest < ActiveRecord::Base
   end
 
   def set_status
-    self.ticket.status="Waiting for Customer"
+    self.ticket.ticket_status=TicketStatus.find_by(text: "Waiting for Customer")
   end
 end

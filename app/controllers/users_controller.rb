@@ -22,6 +22,11 @@ class UsersController < ApplicationController
     respond_with User.create(user_params)
   end
   
+  def destroy
+    p "Destroy-Prarams: #{params}"
+    respond_with User.destroy params[:id]
+  end
+  
   private
   
   def user_params
