@@ -21,14 +21,6 @@ class TicketsController < ApplicationController
     respond_with @ticket
   end
 
-  def statuses
-    @statuses = Ticket.statuses
-    @statuses.each do |status|
-      p status
-    end
-    respond_with @statuses
-  end
-
   def destroy
     p "Prarams: #{params}"
     respond_with Ticket.destroy params[:id]
@@ -74,7 +66,8 @@ class TicketsController < ApplicationController
   private
   
   def ticket_params
-    params.require(:ticket).permit(:reference_no, :subject, :customer_name, :customer_email, :customer_department, :status, :user_id)
+    params_tmp = params.require(:ticket).permit(:reference_no, :subject, :customer_name, :customer_email, :customer_department, :ticket_status_id, :user_id)
+    params_tmp
   end
   
   def ticket_request_params

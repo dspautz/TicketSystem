@@ -10,11 +10,12 @@ Rails.application.routes.draw do
    
     resources :users
     resources :tickets
-    resource :ticket_requests
-    resource :roles
-    resource :ticket_statuses
+    resources :ticket_requests
+    resources :roles
+    resources :ticket_statuses
   end
   
+  # For directly external success via absolute URL 
   get '/tickets/show' => 'tickets#show' 
   
 

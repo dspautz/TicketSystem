@@ -8,9 +8,9 @@ development:
     <<: *common
     domain: "@mail.com"
     user_name: "d.spautz@mail.com"
-    password: "***"
+    password: "P05st_Master"
     address: "smtp.mail.com" 
-    from: 'example@mail.com'    
+    from: 'd.spautz@mail.com'    
   de_mailer:
     <<: *common
     domain: "@web.de"

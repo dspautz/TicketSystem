@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20141101043731) do
 
   create_table "roles", force: true do |t|
     t.string   "rolename"
+    t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,7 +34,6 @@ ActiveRecord::Schema.define(version: 20141101043731) do
   end
 
   create_table "tickets", force: true do |t|
-    t.string   "status"
     t.string   "subject"
     t.integer  "user_id"
     t.string   "customer_name"

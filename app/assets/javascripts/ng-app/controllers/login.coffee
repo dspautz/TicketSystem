@@ -7,7 +7,7 @@ angular.module('TicketSystem').controller("LoginCtrl", [ '$scope', '$location', 
   $scope.login = (formUser) -> Login.query(formUser).then (user) ->
          
       if user?
-        $location.path('/tickets')
+        $location.path('/management')
       else
         $scope.formUser=null        
         $scope.message="Wrong username or password!"

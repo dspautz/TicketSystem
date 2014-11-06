@@ -1,0 +1,36 @@
+<div ng-controller="StaffCtrl">
+	<div class="modal-header">
+		<h3 class="modal-title">Create new User</h3>
+	</div>
+	<div class="modal-body">
+		<section class="row">
+			<form>
+				<table>
+					<tr>
+						<th><label>Username</label></th>
+						<td><input ng-model="newUser.username" name="username" type="text" autofocus class="form-control" placeholder="Username" required></td>
+					</tr>
+					<tr>
+						<th><label>Password</label></th>
+						<td><input ng-model="newUser.password" name="password" type="password" autofocus class="form-control" placeholder="Password" required></td>
+					</tr>
+					<tr>
+						<th><label>Email</label></th>
+						<td><input ng-model="newUser.email" name="email" type="email" autofocus class="form-control" placeholder="example@domain.com" required></td>
+					</tr>
+						<th><label>Role</label></th>
+						<td><select class="form-control" ng-model="user.roleId" ng-options="role.id as role.rolename for role in roles"></td>
+					</tr>
+				</table>	
+			</form>
+		</section>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" ng-click="save(newUser)">
+			Save
+		</button>
+		<button class="btn btn-warning" ng-click="cancel()">
+			Cancel
+		</button>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<div ng-controller="RoleCtrl">
+	<div class="modal-header">
+		<h3 class="modal-title">Create new Role</h3>
+	</div>
+	<div class="modal-body">
+		<section class="row" ng-controller="LoginCtrl">
+			<form>
+				<table>
+					<tr>
+						<th><label>Rolename</label></th>
+						<td><input ng-model="newRole.rolename" name="rolename" type="text" autofocus class="form-control" placeholder="Rolename" required></td>
+					</tr>
+					<tr>
+						<th><label>Admin ?</label></th>
+						<td><input ng-model="newRole.admin" name="sdmin" type="checkbox" autofocus  required></td>
+					</tr>
+				</table>				
+				</div>
+			</form>
+		</section>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" ng-click="save(newRole)">
+			Save
+		</button>
+		<button class="btn btn-warning" ng-click="cancel()">
+			Cancel
+		</button>
+	</div>
+</div>

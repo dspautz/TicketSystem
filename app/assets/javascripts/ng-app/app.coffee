@@ -27,8 +27,8 @@
         templateUrl: "home/index.html",
         controller: 'HomeCtrl'
       )
-      .when('/tickets',
-        templateUrl: "tickets/index.html",
+      .when('/management',
+        templateUrl: "management/index.html",
         controller: 'TicketCtrl'
       )
       .when('/tickets/:id',

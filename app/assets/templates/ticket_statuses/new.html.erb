@@ -1,0 +1,25 @@
+<div ng-controller="TicketStatusCtrl">
+	<div class="modal-header">
+		<h3 class="modal-title">Create new Ticket-Status</h3>
+	</div>
+	<div class="modal-body">
+		<section class="row">
+			<form>
+				<table>
+					<tr>
+						<th><label>Status</label></th>
+						<td><input ng-model="newTicketStatus.text" name="status" type="text" autofocus class="form-control" placeholder="Status" required></td>
+					</tr>
+				</table>	
+			</form>
+		</section>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" ng-click="save(newTicketStatus)">
+			Save
+		</button>
+		<button class="btn btn-warning" ng-click="cancel()">
+			Cancel
+		</button>
+	</div>
+</div>

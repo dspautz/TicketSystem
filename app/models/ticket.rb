@@ -4,6 +4,8 @@ class Ticket < ActiveRecord::Base
   has_many :ticket_requests
   before_create :generate_reference_no, :set_status
   after_create :send_confirmation_email
+  
+  accepts_nested_attributes_for :ticket_requests
 
   #enum status: [ "Waiting for Staff Response", "Waiting for Customer", "On Hold", "Cancelled", "Complete" ]
   
@@ -22,6 +24,6 @@ class Ticket < ActiveRecord::Base
   end
 
   def set_status
-    self.status="Waiting for Staff Response"
+    self.ticket_status=TicketStatus.find_by(text: "Waiting for Staff Response")
   end
 end

@@ -18,5 +18,13 @@ class UsersController < ApplicationController
   end
   
   def create
+    p "Create Params: #{params}"
+    respond_with User.create(user_params)
+  end
+  
+  private
+  
+  def user_params
+    params.require(:user).permit(:username, :password, :email, :role_id)
   end
 end
